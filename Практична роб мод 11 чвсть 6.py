@@ -64,7 +64,7 @@ class Hamster(HomeAnimal):
     def type(self):
         print("Це хом'як кольору", self.color)
 
-# Приклад використання
+
 dog = Dog("Барсік", "дворняга")
 dog.show()
 dog.sound()

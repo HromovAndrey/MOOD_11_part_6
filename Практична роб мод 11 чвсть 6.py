@@ -1,86 +1,33 @@
-# Завдання 3
-# Створіть базовий клас «Домашня тварина» та похідні
-# класи «Пес», «Кіт», «Папуга», «Хом’як». За допомогою
-# конструктора встановіть ім’я кожної тварини та її характеристики. Реалізуйте для кожного із класів наступні
-# методи:
-# ■ Sound — видає звук тварини (пишемо текстом в консоль);
-# ■ Show — відображає ім’я тварини;
-# ■ Type — відображає підвид тварини.
+# Завдання 4
+# Створіть базовий клас Employer (службовець) з функцією Print(). Функція має виводити інформацію про службовця. Для базового класу це може бути рядок із написом
+# «This is Employer class».
+# Створіть від нього три похідні класи: President, Manager, Worker. Перевизначте функцію Print() для виведення
+# інформації, що відповідає кожному типу службовця.
 
-class HomeAnimal:
-    def __init__(self, name):
-        self.name = name
+class Employer:
+    def Print(self):
+        print("This is Employer class")
 
-    def sound(self):
-        pass
+class President(Employer):
+    def Print(self):
+        print("This is President class")
 
-    def show(self):
-        print("Ім'я тварини:", self.name)
+class Manager(Employer):
+    def Print(self):
+        print("This is Manager class")
 
-    def type(self):
-        pass
+class Worker(Employer):
+    def Print(self):
+        print("This is Worker class")
 
-class Dog(HomeAnimal):
-    def __init__(self, name, breed):
-        super().__init__(name)
-        self.breed = breed
+employer = Employer()
+employer.Print()
 
-    def sound(self):
-        print("Гав-гав!")
+president = President()
+president.Print()
 
-    def type(self):
-        print("Це порода собаки", self.breed)
+manager = Manager()
+manager.Print()
 
-class Cat(HomeAnimal):
-    def __init__(self, name, color):
-        super().__init__(name)
-        self.color = color
-
-    def sound(self):
-        print("Мяу!")
-
-    def type(self):
-        print("Це кіт забарвлення", self.color)
-
-class Parrot(HomeAnimal):
-    def __init__(self, name, species):
-        super().__init__(name)
-        self.species = species
-
-    def sound(self):
-        print("Говорить: Привіт, я папуга!")
-
-    def type(self):
-        print("Це папуга виду", self.species)
-
-class Hamster(HomeAnimal):
-    def __init__(self, name, color):
-        super().__init__(name)
-        self.color = color
-
-    def sound(self):
-        print("Шуршить шинкою!")
-
-    def type(self):
-        print("Це хом'як кольору", self.color)
-
-# Приклад використання
-dog = Dog("Барсік", "дворняга")
-dog.show()
-dog.sound()
-dog.type()
-
-cat = Cat("Мурка", "сіра")
-cat.show()
-cat.sound()
-cat.type()
-
-parrot = Parrot("Кеша", "ара")
-parrot.show()
-parrot.sound()
-parrot.type()
-
-hamster = Hamster("Буся", "білий")
-hamster.show()
-hamster.sound()
-hamster.type()
+worker = Worker()
+worker.Print()
